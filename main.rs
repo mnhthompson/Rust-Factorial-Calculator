@@ -1,7 +1,21 @@
 use std::io;
 
-
 fn main() {
+
+    println!("Factorial  Calculator");
+    println!(); 
+
+            // Ask the user if they want a definition of a factorial
+            print!("Would you like a definition of factorials? (y/n): ");
+            io::Write::flush(&mut io::stdout()).expect("Failed to flush stdout");
+    
+            let mut show_definition = String::new();
+            io::stdin().read_line(&mut show_definition).expect("Failed to read line");
+    
+            if show_definition.trim().to_lowercase() == "y" {
+                print_factorial_definition();
+            }
+
     loop {
     //Define a variable 'number' and assign a value to it
     print!("Type a whole number between 1 - 32: ");
@@ -43,8 +57,7 @@ fn main() {
     print!("Do you want to see the factorial table from 1 to {}? (y/n) ", number);
 
        // Ensure text appears before input
-       io::Write::flush(&mut io::stdout()).expect("Failed to flush stdout"); 
-       
+       io::Write::flush(&mut io::stdout()).expect("Failed to flush stdout");  
 
 
     let mut show_table = String::new();
@@ -72,8 +85,6 @@ fn main() {
      
     println!("If your done Type 0 to Exit ");
     println!(); 
-
-
 }
 }
 
@@ -90,3 +101,13 @@ fn factorial(n: u128) -> u128 {
     // Return the calculated factorial
     result
 } 
+
+// Definition of factorial
+fn print_factorial_definition() {
+    println!("Definition of a Factorial:");
+    println!("A factorial, denoted by 'n!', is the product of all positive integers less than or equal to a given number 'n'.");
+    println!("\nFor example:");
+    println!("5! = 5 × 4 × 3 × 2 × 1 = 120");
+    println!("Factorial of 0 is defined as 1: 0! = 1");
+    println!();
+}
