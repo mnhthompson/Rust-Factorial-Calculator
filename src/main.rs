@@ -1,6 +1,8 @@
 use std::io;
 
+
 fn main() {
+
 
     loop {
     //Define a variable 'number' and assign a value to it
@@ -60,4 +62,4 @@ fn factorial(n: u128) -> u128 {
     }
     // Return the calculated factorial
     result
-}
+} 

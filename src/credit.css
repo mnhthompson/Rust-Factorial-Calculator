@@ -1,0 +1,109 @@
+/* Root Custom Properties (CSS Variables) */
+:root {
+    --link-color: #CEB5A7;
+    --text-dark: #011627;
+    --text-light: #000000;
+    --border-color: #122e3d;
+    --background-color: #f4f4f4;
+    --card-front-bg: #c5c5c5;
+    --button-bg: #0E79B2;
+    --button-hover-bg: #2980b9;
+    --input-bg: #ecf0f1;
+    --chip-bg: #CEB5A7;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --body-font: Georgia, Serif;
+    --headline-font: Impact, Serif;
+}
+
+/* General Styles */
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+header, footer {
+    background-color: var(--border-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2 {
+    margin: 0.5rem 0;
+    font-family: var(--headline-font);
+}
+
+
+
+
+
+
+
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: auto;
+    border-color: #000000;
+    border-radius: 5px;
+}
+
+
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+input {
+    padding: 8px 12px;
+    
+    border-radius: 5px;
+    background-color: var(--input-bg);
+    color: #333;
+    font-size: 14px;
+    width: auto;
+    
+    
+}
+
+input:focus {
+    border: 2px solid var(--border-color);
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    background-color: var(--input-bg);
+   
+}
+
+
+
+/* Submit Button */
+button {
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+    height: auto;
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+
