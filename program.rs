@@ -11,9 +11,7 @@ fn main() {
 
     let mut line = String::new();
 
-    io::stdin()
-        .read_line(&mut line)
-        .expect("Failed to read line");
+    io::stdin().read_line(&mut line).expect("Failed to read line");
 
         let number: u128 = match line.trim().parse() {
             Ok(n) => n,
