@@ -18,6 +18,7 @@ fn main() {
          // error protection
             Err(_) => {
                 println!("⚠️ Invalid input! ⚠️ Please enter a valid number.");
+                println!(); 
                 continue; // Restart the loop
             }
         };
@@ -28,6 +29,7 @@ fn main() {
         if number > 32 {
             // Restart the loop
             println!("⚠️Number too large! ⚠️ Please enter a whole number between 1 and 32.");
+            println!(); 
             continue;
         }
 
@@ -37,32 +39,43 @@ fn main() {
             break;
         }
 
-    // Call the 'factorial' function with 'number' as an argument
-    // Store the result in a variable named 'factorial_result'
-    let factorial_result = factorial(number);
-
     // Ask if the user wants to see the factorial table
-    println!("Do you want to see the factorial table from 1 to {}? (y/n)", number);
+    print!("Do you want to see the factorial table from 1 to {}? (y/n) ", number);
+
+       // Ensure text appears before input
+       io::Write::flush(&mut io::stdout()).expect("Failed to flush stdout"); 
+       
+
+
     let mut show_table = String::new();
     io::stdin().read_line(&mut show_table).expect("Failed to read line");
 
     if show_table.trim().to_lowercase() == "y" {
         // Display a factorial table for numbers 1 through the input number
         println!("Factorial table from 1 to {}:", number);
+        println!(); 
         for i in 1..=number {
             let factorial_i = factorial(i);
             println!("Factorial of {} is: {}", i, factorial_i);
+            println!(); 
         }
     }
+    else {
+        // Call the 'factorial' function with 'number' as an argument
+        // Store the result in a variable named 'factorial_result'
+        let factorial_result = factorial(number);
+
+        // Print the result
+        println!("\nFactorial of {} is: {}\n", number, factorial_result);}
 
     // Print the result
-    println!("Factorial of {} is: {}", number, factorial_result);
-
-       
-
+     
     println!("If your done Type 0 to Exit ");
+    println!(); 
 
-}}
+
+}
+}
 
 // Define a function named 'factorial' that takes a parameter 'n' of type u128 and returns a u128
 fn factorial(n: u128) -> u128 {
