@@ -41,22 +41,24 @@ fn main() {
     // Store the result in a variable named 'factorial_result'
     let factorial_result = factorial(number);
 
+    // Ask if the user wants to see the factorial table
+    println!("Do you want to see the factorial table from 1 to {}? (y/n)", number);
+    let mut show_table = String::new();
+    io::stdin().read_line(&mut show_table).expect("Failed to read line");
+
+    if show_table.trim().to_lowercase() == "y" {
+        // Display a factorial table for numbers 1 through the input number
+        println!("Factorial table from 1 to {}:", number);
+        for i in 1..=number {
+            let factorial_i = factorial(i);
+            println!("Factorial of {} is: {}", i, factorial_i);
+        }
+    }
+
     // Print the result
     println!("Factorial of {} is: {}", number, factorial_result);
 
-       // Ask if the user wants to see the factorial table
-       println!("Do you want to see the factorial table from 1 to {}? (y/n)", number);
-       let mut show_table = String::new();
-       io::stdin().read_line(&mut show_table).expect("Failed to read line");
-
-       if show_table.trim().to_lowercase() == "y" {
-           // Display a factorial table for numbers 1 through the input number
-           println!("Factorial table from 1 to {}:", number);
-           for i in 1..=number {
-               let factorial_i = factorial(i);
-               println!("Factorial of {} is: {}", i, factorial_i);
-           }
-       }
+       
 
     println!("If your done Type 0 to Exit ");
 
